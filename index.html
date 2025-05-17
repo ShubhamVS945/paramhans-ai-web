@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Paramhans Classes AI</title>
+  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@4.0.2/dist/tesseract.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/js-pdf@2.5.1/dist/jspdf.umd.min.js"></script>
+  <!-- gpt4all.js उदाहरण CDN (या llama.js WASM) -->
+  <script src="https://cdn.jsdelivr.net/npm/gpt4all-js/dist/gpt4all.min.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Paramhans Classes AI</h1>
+
+  <!-- Text Question -->
+  <section>
+    <h2>Text सवाल पूछें</h2>
+    <textarea id="textQ" placeholder="यहाँ सवाल टाइप करें"></textarea><br/>
+    <button onclick="askText()">पूछो</button>
+    <pre id="textA"></pre>
+  </section>
+
+  <!-- Image Question -->
+  <section>
+    <h2>Photo से सवाल पूछें</h2>
+    <input type="file" accept="image/*" id="imgInput"/><br/>
+    <button onclick="askImage()">पूछो (Photo)</button>
+    <pre id="imgA"></pre>
+  </section>
+
+  <!-- Certificate -->
+  <section>
+    <h2>सर्टिफिकेट डाउनलोड</h2>
+    <textarea id="certQ" placeholder="प्रश्न लिखें"></textarea><br/>
+    <button onclick="generateCert()">सर्टिफिकेट बनाएँ</button>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
