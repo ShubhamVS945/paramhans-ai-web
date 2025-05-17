@@ -3,44 +3,39 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Paramhans AI</title>
-  <!-- Tailwind CSS CDN -->
+  <title>Paramhans AI Integrated</title>
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Tesseract.js -->
-  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@4.0.2/dist/tesseract.min.js"></script>
   <!-- jsPDF -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <!-- gpt4all.js (WASM) -->
   <script src="https://cdn.jsdelivr.net/npm/gpt4all-js/dist/gpt4all.min.js"></script>
-  <link rel="stylesheet" href="style.css"/>
 </head>
-<body class="bg-gray-50 text-gray-800 p-4">
+<body class="bg-gray-50 p-4">
 
-  <div class="max-w-lg mx-auto space-y-6">
+  <div class="max-w-lg mx-auto space-y-4">
 
-    <h1 class="text-2xl font-bold text-center">Paramhans Classes AI</h1>
+    <h1 class="text-2xl font-bold text-center">Paramhans AI Integrated</h1>
 
-    <!-- Text Question -->
-    <div class="space-y-2">
-      <label class="font-medium">Text सवाल पूछें:</label>
-      <textarea id="textQ" class="w-full p-2 border rounded" rows="2" placeholder="यहाँ सवाल लिखें"></textarea>
-      <button onclick="askText()" class="w-full bg-blue-600 text-white py-2 rounded">पूछो</button>
-      <pre id="textA" class="whitespace-pre-wrap bg-white p-2 border rounded"></pre>
-    </div>
+    <!-- Input & Ask -->
+    <textarea id="question" rows="3"
+      class="w-full p-2 border rounded"
+      placeholder="यहाँ कोई भी सवाल (Hindi/English/Math) लिखें"></textarea>
+    <button id="askBtn"
+      class="w-full bg-blue-600 text-white py-2 rounded">पूछो</button>
 
-    <!-- Image Question -->
-    <div class="space-y-2">
-      <label class="font-medium">Photo से सवाल पूछें:</label>
-      <input type="file" accept="image/*" id="imgInput" class="w-full"/>
-      <button onclick="askImage()" class="w-full bg-green-600 text-white py-2 rounded">पूछो (Photo)</button>
-      <pre id="imgA" class="whitespace-pre-wrap bg-white p-2 border rounded"></pre>
-    </div>
-
-    <!-- PDF Certificate -->
-    <div class="space-y-2">
-      <label class="font-medium">Certificate के लिए सवाल:</label>
-      <textarea id="certQ" class="w-full p-2 border rounded" rows="2" placeholder="प्रश्न लिखें"></textarea>
-      <button onclick="generateCert()" class="w-full bg-purple-600 text-white py-2 rounded">PDF बनाएँ</button>
+    <!-- Outputs -->
+    <div id="answers" class="space-y-2 hidden">
+      <div>
+        <h2 class="font-medium">Short Answer:</h2>
+        <pre id="shortAns" class="whitespace-pre-wrap bg-white p-2 border rounded"></pre>
+      </div>
+      <div>
+        <h2 class="font-medium">Long Answer:</h2>
+        <pre id="longAns" class="whitespace-pre-wrap bg-white p-2 border rounded"></pre>
+      </div>
+      <button id="pdfBtn"
+        class="w-full bg-green-600 text-white py-2 rounded">Download PDF</button>
     </div>
 
   </div>
